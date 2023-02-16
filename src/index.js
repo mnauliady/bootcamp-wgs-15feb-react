@@ -1,15 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
-// import fungsi navbar dan element
+import Form from "./Form";
 import Navbar from "./navbar";
-import Element from "./element";
+// Navbar
+const nav = document.getElementById("navbar");
 
-// fungsi untuk render
-const render = (content, id) => {
-  return ReactDOM.render(content, document.getElementById(id));
-};
+// tell react to take control
+const navs = ReactDOM.createRoot(nav);
 
-// memanggil fungsi render
-render(<Element />, "root");
-render(<Navbar />, "navbar");
+// form
+const form = document.getElementById("form");
+
+// tell react to take control
+const forms = ReactDOM.createRoot(form);
+
+forms.render(<Form />);
+navs.render(<Navbar />);
